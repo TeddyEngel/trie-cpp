@@ -22,13 +22,10 @@ bool TrieNode::addString(const std::string& newString)
 {
     const int newStringSize = newString.size();
 
-    // We check if the string to be added is completely added
     if (newString.size() == 0)
     {
-        // If it's not a duplicate of an existing word
         if (!_endOfWord)
         {
-            // Sets the node as end of word
             _endOfWord = true;
             return true;
         }
@@ -91,13 +88,10 @@ int TrieNode::countPartials(const std::string& partialString) const
         const TrieNode& trieNode = *entry.second;
         
         if (letter == partialString[0])
-        {
             count += trieNode.countPartials(partialString.substr(1, partialString.size() - 1));
-        }
     }
     return count;
 }
-
 
 bool TrieNode::hasChildWithLetter(char letter) const
 {

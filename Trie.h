@@ -28,6 +28,4 @@ private:
     std::unordered_map<char, std::unique_ptr<TrieNode>> _children;
 };
 
-class Trie : public TrieNode
-{
-};
+using Trie = TrieNode;
